@@ -1,0 +1,68 @@
+for_each loop: Apart from the standard loops such as “for, while and do-while,” C++  also allows using another functionality that solves the same purpose termed “for_each” loops. This loop accepts a function that executes over each of the container elements. 
+
+This loop is defined in the header file “algorithm” and hence has to be included for this loop’s successful operation.
+
+Advantages of for_each loop:
+
+It is versatile, i.e., it can work with any container.
+It reduces chances of errors one can commit using generic for loop
+It makes code more readable
+for_each loops improve the overall performance of code
+Syntax:
+
+ 
+
+ 
+
+for_each (InputIterator first, InputIterator last, Function fn)
+ 
+
+Here,
+
+first − Input iterator to the initial position.
+last − Final iterator to the final position.
+fn − Unary function that accepts an element in the range as an argument.
+ 
+
+Example:
+
+ 
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int print_even(int n) {
+    if (n % 2 == 0)
+        cout << n << ' ';
+}
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};     
+    cout << "The Array contains the following even numbers" << endl;
+    for_each(arr, arr + 5, print_even);
+    return 0;
+}
+Output:
+The array contains the following even numbers
+2 4
+ 
+
+for_each loop can be executed using the keyword “for.”
+
+ 
+
+Example: 
+
+ 
+
+#include <iostream>
+using namespace std;
+int main() {
+    int arr[] = {1, 2, 3, 4};
+    // Printing elements of an array using foreach loop 
+    for (int x: arr)
+        cout << x << ' ';
+    return 0;
+}
+Output:
+1 2 3 4 
+ 
